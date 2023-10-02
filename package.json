@@ -9,7 +9,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "dev": "vite"
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "private": true,
   "dependencies": {

@@ -130,3 +130,14 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 400px) {
+  .attach-document-change_name {
+    font-size: 9px !important;
+  }
+
+  .attach-document-change_icon {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}

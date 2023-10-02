@@ -1,0 +1,132 @@
+.summary__content {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: nowrap;
+}
+
+.summary__column {
+  display: flex;
+  flex: 0 1 50%;
+  padding: 0 10px;
+}
+
+.info__schedule {
+  color: #737373;
+}
+
+@media (max-width: 1160px) {
+  .info__phone {
+    font-size: 30px !important;
+  }
+
+  .form__title {
+    font-size: 35px !important;
+  }
+
+  .summary {
+    padding: 74px 5px 49px 5px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .form-description__item-build {
+    flex-wrap: wrap !important;
+  }
+
+  .dropdown__button {
+    justify-content: flex-start !important;
+  }
+
+  .form-description__text {
+    margin-bottom: 8px;
+  }
+
+  .form__title {
+    font-size: 28px !important;
+  }
+
+  .summary__column {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .summary__content {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .summary {
+    padding: 48px 5px 35px 5px !important;
+  }
+
+  .reply {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 690px) {
+  .info__phone {
+    font-size: 24px !important;
+    white-space: nowrap;
+  }
+
+  .info__email {
+    font-size: 18px !important;
+    white-space: nowrap;
+  }
+
+  .form__title {
+    font-size: 24px !important;
+  }
+
+  .input__summary {
+    font-size: 20px !important;
+  }
+
+  .dropdown__button_text_summary {
+    font-size: 20px !important;
+  }
+
+  .attach-document_text {
+    font-size: 14px;
+  }
+
+  .attach-document-change_name {
+    font-size: 10px !important;
+    margin-right: 4px;
+  }
+
+  .attach-document-change_icon {
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  .summary {
+    padding: 29px 5px 32px 5px !important;
+  }
+
+  .form-description__text {
+    white-space: pre-wrap !important;
+  }
+
+  .privacy-policy__text {
+    font-size: 12px !important;
+  }
+
+  .contacts-info {
+    padding: 24px !important;
+  }
+
+  .info__title {
+    font-size: 20px !important;
+  }
+
+  .info__email {
+    font-size: 20px !important;
+  }
+
+  .info__schedule {
+    font-size: 12px;
+  }
+}

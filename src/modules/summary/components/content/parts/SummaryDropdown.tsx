@@ -52,6 +52,24 @@ export function SummaryDropdown(props: SummaryDropdownProps) {
 
   const [open, setOpen] = useState(false);
 
+  const toggleExpand = () => {
+    setOpen((open) => !open);
+  };
+
+  const selectCity = (item: SelectData) => {
+    if (item?.label?.toLowerCase() !== selectedCity?.toLowerCase()) {
+      setSelectedCity(item?.label);
+      setOpen(false);
+    }
+  };
+
+  const selectVacancy = (item: SelectData) => {
+    if (item?.label?.toLowerCase() !== selectedVacancy?.toLowerCase()) {
+      setSelectedVacancy(item?.label);
+      setOpen(false);
+    }
+  };
+
   return (
     <div
       className={`dropdown ${
@@ -59,7 +77,7 @@ export function SummaryDropdown(props: SummaryDropdownProps) {
       }`}
     >
       <div
-        onClick={() => setOpen(!open)}
+        onClick={toggleExpand}
         className={`button ${
           isSelectedCity ? 'dropdown__button' : 'dropdown__button-normal'
         }`}
@@ -104,7 +122,8 @@ export function SummaryDropdown(props: SummaryDropdownProps) {
       <ul
         className={`dropdown__list ${
           open ? 'dropdown__list_visible' : 'dropdown__list_hidden'
-        }`}
+        }
+        ${isSelectedCity ? 'dropdown__list_visible_city' : ''}`}
       >
         {isSelectedCity
           ? dataCity?.map((item) => (
@@ -115,14 +134,7 @@ export function SummaryDropdown(props: SummaryDropdownProps) {
                     ? 'dropdown__item_selected'
                     : ''
                 }`}
-                onClick={() => {
-                  if (
-                    item?.label?.toLowerCase() !== selectedCity?.toLowerCase()
-                  ) {
-                    setSelectedCity(item?.label);
-                    setOpen(false);
-                  }
-                }}
+                onClick={() => selectCity(item)}
               >
                 {item?.label}
               </li>
@@ -134,15 +146,7 @@ export function SummaryDropdown(props: SummaryDropdownProps) {
                   item?.label?.toLowerCase() ===
                     selectedVacancy?.toLowerCase() && 'dropdown__item_selected'
                 }`}
-                onClick={() => {
-                  if (
-                    item?.label?.toLowerCase() !==
-                    selectedVacancy?.toLowerCase()
-                  ) {
-                    setSelectedVacancy(item?.label);
-                    setOpen(false);
-                  }
-                }}
+                onClick={() => selectVacancy(item)}
               >
                 {item?.label}
               </li>

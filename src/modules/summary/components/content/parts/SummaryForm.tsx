@@ -189,6 +189,7 @@ export function SummaryForm() {
                   {file?.name ?? ''}
                 </div>
                 <button
+                  type="button"
                   className="attach-document-change_icon"
                   onClick={() => handleFileRemove(index)}
                 >

@@ -2,6 +2,8 @@ import { BaseSyntheticEvent, useState } from 'react';
 import SummaryDropdown from './SummaryDropdown';
 import Attach from './../../../../../../public/images/attach/attach.svg';
 import Trash from './../../../../../../public/images/trash/trash.svg';
+import { cityOptions } from '../../../data/cityOptions';
+import { vacancyOptions } from '../../../data/vacancyOptions';
 
 export function SummaryForm() {
   const [selectedCity, setSelectedCity] = useState('');
@@ -14,6 +16,18 @@ export function SummaryForm() {
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+  };
+
+  const changeName = (e: BaseSyntheticEvent) => {
+    setName(e.target.value);
+  };
+
+  const changeEmail = (e: BaseSyntheticEvent) => {
+    setEmail(e.target.value);
+  };
+
+  const changeInfo = (e: BaseSyntheticEvent) => {
+    setInfo(e.target.value);
   };
 
   const handleFileChange = (e: BaseSyntheticEvent) => {
@@ -90,12 +104,7 @@ export function SummaryForm() {
               </div>
               <div className="form-description__dropdown">
                 <SummaryDropdown
-                  dataCity={[
-                    { value: '0', label: 'Москва' },
-                    { value: '1', label: 'Краснодар' },
-                    { value: '2', label: 'Казань' },
-                    { value: '3', label: 'Нижний Новгород' },
-                  ]}
+                  dataCity={cityOptions}
                   isSelectedCity={true}
                   selectedCity={selectedCity}
                   setSelectedCity={setSelectedCity}
@@ -113,7 +122,7 @@ export function SummaryForm() {
                 placeholder="Как вас зовут?"
                 value={name}
                 className="input__summary"
-                onChange={(e) => setName(e.target.value)}
+                onChange={changeName}
               />
             </div>
           </div>
@@ -129,7 +138,7 @@ export function SummaryForm() {
                   placeholder="E-mail"
                   value={email}
                   className="input__summary"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={changeEmail}
                 />
               </div>
             </div>
@@ -137,13 +146,7 @@ export function SummaryForm() {
           <div className="form-description__item">
             <div className="form-description__dropdown">
               <SummaryDropdown
-                dataVacancy={[
-                  { value: '4', label: 'Программист' },
-                  { value: '5', label: 'Верстальщик' },
-                  { value: '6', label: 'Аналитик' },
-                  { value: '7', label: 'SEO специалист' },
-                  { value: '8', label: 'Контент менеджер' },
-                ]}
+                dataVacancy={vacancyOptions}
                 isSelectedCity={false}
                 selectedCity={selectedCity}
                 setSelectedCity={setSelectedCity}
@@ -161,7 +164,7 @@ export function SummaryForm() {
                 placeholder="Напишите о себе кратко"
                 value={info}
                 className="input__summary text-lg"
-                onChange={(e) => setInfo(e.target.value)}
+                onChange={changeInfo}
               />
             </div>
             <div className="form-description__item-line form-description__item-line_info"></div>
